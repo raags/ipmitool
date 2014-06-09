@@ -1,4 +1,4 @@
-# ipmitool.py : Utility to run ipmitool commands in parallel
+# ipmitool.py
 
 ipmitool.py is a command line utility to run and gather output from
 large number of consoles. It uses the ipmi module that abstracts
