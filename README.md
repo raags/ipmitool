@@ -18,4 +18,11 @@ uses expect if the Solaris Platform is detected.
 
 ## Installing
 
-    python setup.py install
+    pip install ipmitool
+    
+This will install ipmitool.py in your path.
+
+e.g. :
+    $ ipmitool.py -f console_list.txt status
+    Password: 
+    Chassis Power is on -- [6] app322-console.prod, app323-console.prod, app324-console.prod, app325-console.prod, app326-console.prod, app327-console.prod
