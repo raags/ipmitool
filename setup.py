@@ -12,7 +12,7 @@ setup(name='ipmitools',
       packages=['ipmi'],
       entry_points = {
         'console_scripts': [
-        'ipmitool.py=ipmi.ipmi_cli:main' 
+        'ipmitool.py=ipmi.ipmicli:main' 
         ],
       },
      )

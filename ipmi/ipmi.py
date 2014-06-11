@@ -1,3 +1,7 @@
+"""
+Abstracts interaction with the ipmitool utilty 
+by providing a pythonic interface
+"""
 import sys, pexpect, subprocess
 
 class ipmitool(object):
@@ -5,6 +9,18 @@ class ipmitool(object):
     subprocess or expect depending on the platform. ipmitool 
     on sunos does not support passing the console password on 
     command line
+    e.g :
+    >>> ipmi = ipmitool(console, password)
+    >>> ipmi.execute("chassis status")
+    >>> ipmi.execute("chassis status")
+    0
+    >>> print ipmi.output
+    System Power         : on
+    Power Overload       : false
+    Power Interlock      : inactive
+    Main Power Fault     : false
+    Power Control Fault  : false
+    ...
     """
     
     def __init__(self, console, password, username='root'):
