@@ -118,9 +118,9 @@ def main():
         description="Run ipmitool commands on consoles")
     
     group = parser.add_argument_group("Host selectors")
-    group.add_argument("-H", "--host", nargs=1, help="Console Ip or Dns Name")
-    group.add_argument("-f", "--file", nargs=1, help="File with list of Consoles")
-    group.add_argument("-u", "--username", nargs=1, default='root', help="Console username to use") 
+    group.add_argument("-H", "--host", help="Console Ip or Dns Name")
+    group.add_argument("-f", "--file", help="File with list of Consoles")
+    group.add_argument("-u", "--username", default='root', help="Console username to use") 
     parser.add_argument("-v", "--verbose", help="Verbose output", action="store_true")
     parser.add_argument("command", choices=["pxer", "pxe", "disk", "reboot", "off", "on", "status"], 
                         help= "pxer - set to PXE and reboot host")
@@ -129,12 +129,12 @@ def main():
     
     if args.file:
         try:
-            host_list = open(args.file[0]).read().split()
+            host_list = open(args.file).read().split()
         except IOError as err:
             print("Error: cannot open {0} ({1})".format(hostfile, err))
             exit(1)           
     elif args.host:
-        host_list = args.host
+        host_list = [args.host]
     else:
         parser.print_usage()
         sys.exit(1)
