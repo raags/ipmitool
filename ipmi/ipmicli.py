@@ -47,7 +47,7 @@ class Runner(Thread):
     def ipmi_method(self, command):       
         """Use ipmitool to run commands with ipmi protocol
         """
-        ipmi = ipmitool(self.console, self.password)
+        ipmi = ipmitool(self.console, self.password, self.username)
         
         if command == "reboot":
             self.ipmi_method(command="status")
