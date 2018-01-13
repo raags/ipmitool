@@ -3,18 +3,18 @@
 from setuptools import setup
 
 setup(
-      name='ipmitools',
-      packages=['ipmi'],
-      version='0.2',
-      description='Run ipmitool commands on consoles',
-      author='Raghu Udiyar',
-      author_email='raghusiddarth@gmail.com',
-      url='https://github.com/raags/ipmitool',
-      download_url = 'https://github.com/raags/ipmitool/tarball/0.2',
-      install_requires=['pexpect', 'argparse'],
-      entry_points = {
+    name='ipmitools',
+    packages=['ipmi'],
+    version='0.3',
+    description='Run ipmitool commands on consoles',
+    author='Raghu Udiyar',
+    author_email='raghusiddarth@gmail.com',
+    url='https://github.com/raags/ipmitool',
+    download_url='https://github.com/raags/ipmitool/tarball/0.3',
+    install_requires=['pexpect', 'argparse'],
+    entry_points={
         'console_scripts': [
-        'ipmitool.py=ipmi.ipmicli:main'
+            'ipmitool.py=ipmi.ipmicli:main'
         ],
-      },
-     )
+    },
+)
