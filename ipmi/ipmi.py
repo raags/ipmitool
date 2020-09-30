@@ -43,7 +43,7 @@ class ipmitool(object):
         
         self.args = ['-I', 'lanplus', '-H', self.console, '-U', self.username]
         
-        if sys.platform == 'linux2':
+        if sys.platform.startswith('linux'):
             self.args.extend(['-P', self.password])
             self.method = self._subprocess_method
                     
@@ -117,7 +117,7 @@ class ipmitool(object):
         p = subprocess.Popen(["which", cmd], 
             stdout=subprocess.PIPE, stderr=subprocess.PIPE)                
         out, err =  p.communicate()
-        return out.strip()
+        return out.strip().decode()
     
     
     # common ipmi command shortcuts
